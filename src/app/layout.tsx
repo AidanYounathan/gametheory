@@ -1,6 +1,35 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+
+export const myFont = localFont({
+  src: [
+    {
+      path: '../../public/fonts/PPNeueMontreal-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/PPNeueMontreal-Book.otf',
+      weight: '350',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/PPNeueMontreal-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/PPNeueMontreal-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    }
+  ],
+  variable: "--font-neue",        // ✅ optional CSS variable name
+  display: "swap",
+
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +40,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+
 
 export const metadata: Metadata = {
   title: "Game Theory",
@@ -34,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} antialiased`}
       >
         {children}
       </body>

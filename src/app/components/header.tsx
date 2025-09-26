@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <header className="w-full ">
+        <header className={`w-full font-[var(--font-neue)] `}>
             <div className="rounded-[5px] m-5 border-5 border-[var(--bone)] text-[var(--bone)]">   
             <div className="flex justify-between">
                 <div className="flex items-center p-3">
