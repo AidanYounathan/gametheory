@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="w-full font-[var(--font-neue)] fixed top-0 z-50">
-            <div className="rounded-[5px] m-5 border-5 border-[var(--bone)] text-[var(--bone)]">
+        <header className="w-full font-[var(--font-neue)] fixed top-0 z-50 ">
+            <div className="rounded-[5px] m-5 border-5 border-bone text-bone bg-[var(--background)]">
                 <div className="flex justify-between">
                     <div className="flex items-center p-3">
                         <h1 className="font-bold text-4xl">

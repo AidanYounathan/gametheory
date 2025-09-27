@@ -69,7 +69,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} ${myFont.className} antialiased`}
       >
         <Header />
-        <main className="pt-36">
+        <main className="pt-26.5">
           {children}
         </main>
       </body>
