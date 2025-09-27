@@ -16,7 +16,7 @@ export default function Header() {
                         </h1>
                     </div>
                     <nav
-                        className="text-[32px] flex gap-12 items-center p-4 pr-9 font-medium"
+                        className="text-[32px] flex gap-12 items-center p-4 pr-9 font-light"
                         role="navigation"
                         aria-label="Main navigation"
                     >

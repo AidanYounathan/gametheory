@@ -13,7 +13,7 @@ export const myFont = localFont({
     },
     {
       path: '../../public/fonts/PPNeueMontreal-Book.otf',
-      weight: '350',
+      weight: '300',
       style: 'normal',
     },
     {
@@ -69,7 +69,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${myFont.variable} ${myFont.className} antialiased`}
       >
         <Header />
-        {children}
+        <main className="pt-36">
+          {children}
+        </main>
       </body>
     </html>
   );
