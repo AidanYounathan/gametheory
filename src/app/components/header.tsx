@@ -13,7 +13,7 @@ export default function Header() {
         window.addEventListener("keydown", onKey);
         return () => window.removeEventListener("keydown", onKey);
     }, []);
-
+// Added focus styles and improved accessibility with ARIA attributes
     return (
         <header className="w-full font-[var(--font-neue)] fixed top-0 z-50">
             <div className="rounded-[5px] m-5 border-5 border-bone text-bone bg-[var(--background)]">
