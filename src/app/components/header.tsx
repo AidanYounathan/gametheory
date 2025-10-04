@@ -16,7 +16,7 @@ export default function Header() {
 // Added focus styles and improved accessibility with ARIA attributes
     return (
         <header className="w-full font-[var(--font-neue)] fixed top-0 z-50">
-            <div className="rounded-[5px] m-5 border-5 border-bone text-bone bg-[var(--background)]">
+            <div className="rounded-[5px] m-5 border-5 border-bone shadow-2xl text-bone bg-[var(--background)]">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center p-3">
                         <h1 className="font-bold text-4xl">

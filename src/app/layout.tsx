@@ -27,7 +27,7 @@ export const myFont = localFont({
       style: 'normal',
     }
   ],
-  variable: "--font-neue",        // ✅ optional CSS variable name
+  variable: "--font-neue",        
   display: "swap",
 
 });
