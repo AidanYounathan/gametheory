@@ -23,7 +23,9 @@ export default function Home() {
                 Play Now
               </button>
             </div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/MHS-htjGgSY?si=v9AM4lMe-w5RpOn5" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <div className="flex justify-center mt-8 relative w-full aspect-video">
+              <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/MHS-htjGgSY?si=v9AM4lMe-w5RpOn5" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            </div>
           </div>
         </div>
       </section>
