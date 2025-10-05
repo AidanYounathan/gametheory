@@ -15,8 +15,31 @@ export default function Home() {
     "First-Price Auction"
   ];
   
-  const tabContent = [
-    "The Prisoner's Dilemma is a fundamental game theory scenario where two players must choose between cooperation and defection. Each player makes their choice without knowing what the other will do. The dilemma arises because mutual cooperation yields better results than mutual defection, but individual defection can provide the highest payoff if the other player cooperates.",
+  const tabContent: (string | { sections: { title: string; content: string; }[] })[] = [
+    {
+      sections: [
+        {
+          title: "1. Choose Your Opponent",
+          content: "Pick a classic strategy to play against—like Tit For Tat, Grudger, or Random."
+        },
+        {
+          title: "2. Set Your Round Limit", 
+          content: "Decide how many rounds you want to play—short and quick or long and strategic."
+        },
+        {
+          title: "3. Decide Each Round: Cooperate or Betray",
+          content: "Every round, you make a choice:\nCooperate — work together for mutual benefit\nBetray — go for the bigger payoff at your opponent's expense"
+        },
+        {
+          title: "4. Earn Points Based on Both Choices",
+          content: "Both cooperate → 3 points each\nYou betray, they cooperate → 5 points for you, 0 for them\nThey betray, you cooperate → 0 points for you, 5 for them\nBoth betray → 1 point each"
+        },
+        {
+          title: "5. Win by Scoring More Points",
+          content: "After all rounds are complete, the player with the highest total score wins.\nReady to outsmart the legendary strategies?"
+        }
+      ]
+    },
     "Matching Pennies is a zero-sum game where two players simultaneously choose heads or tails. Player 1 wins if both choices match, while Player 2 wins if they don't match. This creates a game of pure strategy where players try to be unpredictable while anticipating their opponent's moves.",
     "A First-Price Auction is a sealed-bid auction where the highest bidder wins and pays exactly what they bid. Players must balance bidding high enough to win against bidding low enough to maintain profit. The strategic element comes from estimating others' valuations while managing the winner's curse."
   ];
@@ -83,9 +106,29 @@ export default function Home() {
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">
                 {tabs[activeTab]}
               </h3>
-              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
-                {tabContent[activeTab]}
-              </p>
+              {typeof tabContent[activeTab] === 'object' && 'sections' in tabContent[activeTab] ? (
+                <div className="mx-auto max-w-4xl px-8">
+                  {(tabContent[activeTab] as { sections: { title: string; content: string; }[] }).sections.map((section, index) => (
+                    <div key={index} className="mb-6">
+                      <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">
+                        {section.title}
+                      </h4>
+                      <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-left whitespace-pre-line">
+                        {section.content}
+                      </p>
+                    </div>
+                  ))}
+                  <div className="flex justify-center mt-8">
+                    <button className="bg-black text-white hover:bg-gray-800 rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 py-3 sm:py-4 md:py-5 lg:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition-colors cursor-pointer border-none text-center">
+                      Play Now
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-left whitespace-pre-line mx-auto max-w-4xl px-8">
+                  {tabContent[activeTab] as string}
+                </p>
+              )}
             </div>
           </div>
         </div>
