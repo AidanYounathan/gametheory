@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Header from "./components/header";
 import Marquee from "react-fast-marquee";
@@ -5,6 +7,20 @@ import Marquee from "react-fast-marquee";
 
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(0);
+  
+  const tabs = [
+    "Prisoners Dilemma",
+    "Matching Pennies", 
+    "First-Price Auction"
+  ];
+  
+  const tabContent = [
+    "The Prisoner's Dilemma is a fundamental game theory scenario where two players must choose between cooperation and defection. Each player makes their choice without knowing what the other will do. The dilemma arises because mutual cooperation yields better results than mutual defection, but individual defection can provide the highest payoff if the other player cooperates.",
+    "Matching Pennies is a zero-sum game where two players simultaneously choose heads or tails. Player 1 wins if both choices match, while Player 2 wins if they don't match. This creates a game of pure strategy where players try to be unpredictable while anticipating their opponent's moves.",
+    "A First-Price Auction is a sealed-bid auction where the highest bidder wins and pays exactly what they bid. Players must balance bidding high enough to win against bidding low enough to maintain profit. The strategic element comes from estimating others' valuations while managing the winner's curse."
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center text-bone font-[var(--font-neue)]">
       <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
@@ -29,16 +45,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Game rule selection tab */}
       <section>
-        <nav>
-          <h2>Prisoners Dilemma</h2>
-          <h2>Matching Pennies</h2>
-          <h2>First-Price Auction</h2>
+        <nav className="w-full flex justify-center mt-16">
+          <div className="flex flex-row items-end gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 relative">
+            {/* Base underline for all */}
+            <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-bone w-full pointer-events-none" style={{zIndex: 0}} />
+            {tabs.map((tab, i) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(i)}
+                className={
+                  `relative px-2 pb-1 font-bold text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-colors duration-200 ` +
+                  (activeTab === i
+                    ? "text-bone"
+                    : "text-bone/70 hover:text-bone/90")
+                }
+                style={{zIndex: 1}}
+              >
+                <span>{tab}</span>
+                {/* Thick underline for active */}
+                <span
+                  className={`absolute left-0 right-0 -bottom-1 h-[4px] rounded bg-bone transition-all duration-300 ${
+                    activeTab === i ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  aria-hidden="true"
+                />
+              </button>
+            ))}
+          </div>
         </nav>
+        
+        {/* Content area */}
+        <div className="flex justify-center mt-8 mb-32">
+          <div className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] p-6 sm:p-8 md:p-10">
+            <div className="text-bone bg-[var(--background)] border-2 border-bone rounded-lg p-6 sm:p-8 md:p-10">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">
+                {tabs[activeTab]}
+              </h3>
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+                {tabContent[activeTab]}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       
     </main>
   );
 }
+
+
 
 
