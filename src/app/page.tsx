@@ -29,7 +29,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <section>
+        <nav>
+          <h2>Prisoners Dilemma</h2>
+          <h2>Matching Pennies</h2>
+          <h2>First-Price Auction</h2>
+        </nav>
+      </section>
+      
     </main>
   );
 }
