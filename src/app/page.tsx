@@ -40,8 +40,8 @@ export default function Home() {
         }
       ]
     },
-    "Matching Pennies is a zero-sum game where two players simultaneously choose heads or tails. Player 1 wins if both choices match, while Player 2 wins if they don't match. This creates a game of pure strategy where players try to be unpredictable while anticipating their opponent's moves.",
-    "A First-Price Auction is a sealed-bid auction where the highest bidder wins and pays exactly what they bid. Players must balance bidding high enough to win against bidding low enough to maintain profit. The strategic element comes from estimating others' valuations while managing the winner's curse."
+    "COMING SOON Matching Pennies is a zero-sum game where two players simultaneously choose heads or tails. Player 1 wins if both choices match, while Player 2 wins if they don't match. This creates a game of pure strategy where players try to be unpredictable while anticipating their opponent's moves.",
+    "COMING SOON A First-Price Auction is a sealed-bid auction where the highest bidder wins and pays exactly what they bid. Players must balance bidding high enough to win against bidding low enough to maintain profit. The strategic element comes from estimating others' valuations while managing the winner's curse."
   ];
 
   return (
