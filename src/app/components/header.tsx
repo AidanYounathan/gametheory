@@ -42,7 +42,7 @@ export default function Header() {
                             <span className="bg-left-bottom bg-gradient-to-r from-bone to-bone bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">About</span>
                         </Link>
                         <Link
-                            href="/play"
+                            href="/#playNow"
                             className="group hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[var(--bone)] focus:ring-offset-2 transition-opacity"
                         >
                             <span className="bg-left-bottom bg-gradient-to-r from-bone to-bone bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">Play Now</span>

@@ -69,8 +69,11 @@ export default function Home() {
         </div>
       </section>
       {/* Game rule selection tab */}
-      <section>
-        <nav className="w-full flex justify-center mt-16">
+      <section id="playNow">
+        <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
+          <h1>🎮 Choose Your Game 🎮</h1>
+        </div>
+        <nav className="w-full flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
           <div className="flex flex-row items-end gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 relative">
             {/* Base underline for all */}
             <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-bone w-full pointer-events-none" style={{zIndex: 0}} />
