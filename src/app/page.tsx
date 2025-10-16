@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "./components/header";
 import Marquee from "react-fast-marquee";
 
@@ -122,9 +123,11 @@ export default function Home() {
                     </div>
                   ))}
                   <div className="flex justify-center mt-8">
-                    <button className="bg-black text-white hover:bg-gray-800 rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 py-3 sm:py-4 md:py-5 lg:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition-colors cursor-pointer border-none text-center">
-                      Play Now
-                    </button>
+                    <Link href="/player-select">
+                      <button className="bg-black text-white hover:bg-gray-800 rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 py-3 sm:py-4 md:py-5 lg:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition-colors cursor-pointer border-none text-center">
+                        Play Now
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ) : (
