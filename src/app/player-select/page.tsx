@@ -31,7 +31,7 @@ export default function Home() {
 
     return (
         <div className=" text-bone">
-            <Marquee className="overflow-hidden font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-normal">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!</Marquee>
+            <Marquee className="overflow-hidden font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-normal text-background text-outline ">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!</Marquee>
             <div className="grid grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-8 p-6 sm:p-8 md:p-10 lg:p-12 max-w-6xl mx-auto">
                 {/* Character options - 4x4 grid */}
                 {characters.map((character) => (
