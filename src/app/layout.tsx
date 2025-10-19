@@ -70,7 +70,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
-        <main className="pt-26.5">
+        <main className="pt-29">
           {children}
         </main>
       </body>
