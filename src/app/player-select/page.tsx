@@ -7,49 +7,51 @@ export default function Home() {
     const [selectedCharacter, setSelectedCharacter] = useState<number | null>(null);
 
     const characters = [
-        { id: 1, name: "Character 1", description: "Description 1", image: "/placeholder-character.png" },
-        { id: 2, name: "Character 2", description: "Description 2", image: "/placeholder-character.png" },
-        { id: 3, name: "Character 3", description: "Description 3", image: "/placeholder-character.png" },
-        { id: 4, name: "Character 4", description: "Description 4", image: "/placeholder-character.png" },
-        { id: 5, name: "Character 5", description: "Description 5", image: "/placeholder-character.png" },
-        { id: 6, name: "Character 6", description: "Description 6", image: "/placeholder-character.png" },
-        { id: 7, name: "Character 7", description: "Description 7", image: "/placeholder-character.png" },
-        { id: 8, name: "Character 8", description: "Description 8", image: "/placeholder-character.png" },
-        { id: 9, name: "Character 9", description: "Description 9", image: "/placeholder-character.png" },
-        { id: 10, name: "Character 10", description: "Description 10", image: "/placeholder-character.png" },
-        { id: 11, name: "Character 11", description: "Description 11", image: "/placeholder-character.png" },
-        { id: 12, name: "Character 12", description: "Description 12", image: "/placeholder-character.png" },
-        { id: 13, name: "Character 13", description: "Description 13", image: "/placeholder-character.png" },
-        { id: 14, name: "Character 14", description: "Description 14", image: "/placeholder-character.png" },
-        { id: 15, name: "Character 15", description: "Description 15", image: "/placeholder-character.png" },
-        { id: 16, name: "Character 16", description: "Description 16", image: "/placeholder-character.png" },
+        { id: 1, name: "Tit for Tat", description: "\"I'll match your move!\"", image: "/placeholder-character.png" },
+        { id: 2, name: "Tideman & Chieruzzi", description: "Careful experimenters who adjust based on past outcomes.", image: "/placeholder-character.png" },
+        { id: 3, name: "Nydegger", description: "Analytical and cautious waits for patterns before reacting", image: "/placeholder-character.png" },
+        { id: 4, name: "Grofman", description: "Blends cooperation with calculated risk-taking", image: "/placeholder-character.png" },
+        { id: 5, name: "Shubik", description: "Strategic opportunist. Cooperates early but will pounce on weakness.", image: "/placeholder-character.png" },
+        { id: 6, name: "Stein & Rapoport", description: "Methodical duo. Balanced between trust and defense.", image: "/placeholder-character.png" },
+        { id: 7, name: "Grudger", description: "Friendly until crossed. \"Betray me once and I never forgive.\"", image: "/placeholder-character.png" },
+        { id: 8, name: "Davis", description: "Loyal collaborator. Values steady long-term cooperation.", image: "/placeholder-character.png" },
+        { id: 9, name: "Graaskamp", description: "Adaptive strategist. Mixes random play with tactical responses.", image: "/placeholder-character.png" },
+        { id: 10, name: "FirstByDowning", description: "Starts cautiously, then mirrors your style if trust builds.", image: "/placeholder-character.png" },
+        { id: 11, name: "Feld", description: "Bold and aggressive tests trust by pushing early.", image: "/placeholder-character.png" },
+        { id: 12, name: "Joss", description: "Description 12", image: "/placeholder-character.png" },
+        { id: 13, name: "Tullock", description: "Description 13", image: "/placeholder-character.png" },
+        { id: 14, name: "Unnamed", description: "Description 14", image: "/placeholder-character.png" },
+        { id: 15, name: "Random", description: "Description 15", image: "/placeholder-character.png" },
     ];
 
     const handleCharacterSelect = (characterId: number) => {
-        setSelectedCharacter(characterId);
+        const character = characters.find(c => c.id === characterId);
+        if (character) {
+            console.log(`Selected character: ${character.name}`);
+            console.log(`Selected character ID: ${characterId}`);
+            setSelectedCharacter(characterId);
+        }
     };
 
     return (
         <div className=" text-bone">
-            <Marquee className="overflow-hidden font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl tracking-normal text-background text-outline ">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!</Marquee>
-            <div className="grid grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-8 p-6 sm:p-8 md:p-10 lg:p-12 max-w-6xl mx-auto">
-                {/* Character options - 4x4 grid */}
+            <Marquee className="overflow-hidden font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-normal text-background text-outline">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!</Marquee>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 md:py-3 max-w-7xl mx-auto">
+                {/* Character options - 5x3 responsive grid */}
                 {characters.map((character) => (
                     <div 
                         key={character.id}
                         onClick={() => handleCharacterSelect(character.id)}
-                        className={`bg-gray-200 border-2 p-2 sm:p-3 md:p-4 rounded-lg aspect-square flex flex-col justify-between items-center text-center cursor-pointer transition-all duration-200 ${
+                        className={`bg-gray-200 border p-2 sm:p-3 rounded-lg h-32 sm:h-36 md:h-40 flex flex-col justify-between items-center text-center cursor-pointer transition-all duration-200 ${
                             selectedCharacter === character.id 
                                 ? 'border-blue-500 bg-blue-100 shadow-lg transform scale-105' 
                                 : 'border-gray-400 hover:border-gray-600 hover:shadow-md'
                         }`}
                     >
-                        {/* Image placeholder at the top */}
+
                         <div className="w-full flex-1 flex items-center justify-center mb-2">
-                            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gray-300 rounded-full flex items-center justify-center">
-                                {/* Placeholder for character image */}
-                                <span className="text-gray-500 text-xs sm:text-sm">IMG</span>
-                                {/* Uncomment when you have actual images: */}
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-300 rounded-full flex items-center justify-center">
+                                <span className="text-gray-500 text-xs">IMG</span>
                                 {/* <Image 
                                     src={character.image} 
                                     alt={character.name}
@@ -60,12 +62,11 @@ export default function Home() {
                             </div>
                         </div>
                         
-                        {/* Character name and description at the bottom */}
                         <div className="w-full">
-                            <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-800 mb-1">
+                            <h3 className="text-xs sm:text-sm font-bold text-gray-800 mb-0.5">
                                 {character.name}
                             </h3>
-                            <p className="text-xs sm:text-xs md:text-sm text-gray-600 leading-tight">
+                            <p className="text-[10px] sm:text-xs text-gray-600 leading-tight">
                                 {character.description}
                             </p>
                         </div>
@@ -88,4 +89,4 @@ export default function Home() {
     );
 }
 
-//Need to design character select, then work on the logic, then building it out
+//Need to work on the logic,
