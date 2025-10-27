@@ -18,8 +18,8 @@ export default function Home() {
         { id: 9, name: "Graaskamp", description: "Adaptive strategist. Mixes random play with tactical responses.", image: "/placeholder-character.png" },
         { id: 10, name: "FirstByDowning", description: "Starts cautiously, then mirrors your style if trust builds.", image: "/placeholder-character.png" },
         { id: 11, name: "Feld", description: "Bold and aggressive tests trust by pushing early.", image: "/placeholder-character.png" },
-        { id: 12, name: "Joss", description: "Description 12", image: "/placeholder-character.png" },
-        { id: 13, name: "Tullock", description: "Description 13", image: "/placeholder-character.png" },
+        { id: 12, name: "Joss", description: "Mostly Tit-for-Tat but occasionally throws a surprise betrayal.", image: "/placeholder-character.png" },
+        { id: 13, name: "Tullock", description: "Plays unpredictably with short bursts of aggression.", image: "/placeholder-character.png" },
         { id: 14, name: "Unnamed", description: "Description 14", image: "/placeholder-character.png" },
         { id: 15, name: "Random", description: "Description 15", image: "/placeholder-character.png" },
     ];
@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
         <div className=" text-bone">
-            <Marquee className="overflow-hidden font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-normal text-background text-outline">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!</Marquee>
+            <Marquee className="overflow-hidden font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-normal text-background text-outline">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!&nbsp;</Marquee>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 md:py-3 max-w-7xl mx-auto">
                 {/* Character options - 5x3 responsive grid */}
                 {characters.map((character) => (
@@ -76,7 +76,7 @@ export default function Home() {
             
             {/* Selected character display */}
             {selectedCharacter && (
-                <div className="text-center mt-6 p-4 bg-bone text-gray-800 rounded-lg mx-6 sm:mx-8 md:mx-10 lg:mx-12">
+                <div className="text-center mt-6 p-4 bg-bone text-gray-800 rounded-lg mx-6 sm:mx-8 md:mx-10 lg:mx-12 mb-3">
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
                         Selected: {characters.find(c => c.id === selectedCharacter)?.name}
                     </h2>

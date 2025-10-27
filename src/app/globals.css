@@ -49,6 +49,6 @@ html {
 
 @media (max-width: 768px) {
   .text-outline {
-    -webkit-text-stroke: 1px var(--bone);
+    -webkit-text-stroke: .5px var(--bone);
   }
 }
