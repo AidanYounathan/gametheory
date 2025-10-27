@@ -47,19 +47,19 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center text-bone font-[var(--font-neue)]">
-      <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
+  <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
         <Marquee className="overflow-hidden font-bold">
           GAME THEORY ★ GAME THEORY ★ GAME THEORY ★ GAME THEORY ★ GAME THEORY ★ GAME THEORY ★ GAME THEORY ★ GAME THEORY ★
         </Marquee>
       </div>
-      <Image className="w-5xl h-auto my-16" src="/guys.png" alt="Placeholder" width={500} height={300} />
+  <Image className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl h-auto my-8 sm:my-12 md:my-16 px-4" src="/guys.png" alt="Placeholder" width={500} height={300} />
       <section>
         <h2 className="font-bold text-center text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl m">What is Game Theory?</h2>
         <div className="flex justify-center text-black w-screen bg-bone mt-3">
-          <div className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[80vw] p-3 sm:p-5 md:p-6 lg:p-8 py-8 sm:py-10 md:py-14">
-            <p className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">Game theory is the study of strategy and decision-making when outcomes depend on more than just your own choices.<br/><span className="font-light">From the famous Prisoner’s Dilemma to real-world economics and biology, it explains how cooperation, competition, and clever tactics shape results. This site turns those ideas into an interactive experience.  Face off against classic strategies like Tit For Tat or Grudger and see how small moves create big consequences.</span></p>
-            <div className="flex justify-center mt-8">
-              <button className="bg-black text-white hover:bg-gray-800 rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 py-3 sm:py-4 md:py-5 lg:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition-colors cursor-pointer border-none text-center">
+          <div className="w-[95vw] sm:w-[90vw] md:w-[82vw] lg:w-[76vw] xl:w-[72vw] p-3 sm:p-4 md:p-5 lg:p-6 py-6 sm:py-8 md:py-10">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">Game theory is the study of strategy and decision-making when outcomes depend on more than just your own choices.<br/><span className="font-light">From the famous Prisoner’s Dilemma to real-world economics and biology, it explains how cooperation, competition, and clever tactics shape results. This site turns those ideas into an interactive experience.  Face off against classic strategies like Tit For Tat or Grudger and see how small moves create big consequences.</span></p>
+            <div className="flex justify-center mt-6">
+              <button className="bg-black text-white hover:bg-gray-800 rounded-full w-40 sm:w-44 md:w-48 lg:w-52 py-2 sm:py-3 md:py-4 text-base sm:text-lg md:text-xl font-semibold transition-colors cursor-pointer border-none text-center">
                 Play Now
               </button>
             </div>
@@ -71,11 +71,11 @@ export default function Home() {
       </section>
       {/* Game rule selection tab */}
       <section id="playNow">
-        <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
           <h1>🎮 Choose Your Game 🎮</h1>
         </div>
         <nav className="w-full flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
-          <div className="flex flex-row items-end gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 relative">
+          <div className="flex flex-row items-end gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 relative">
             {/* Base underline for all */}
             <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-bone w-full pointer-events-none" style={{zIndex: 0}} />
             {tabs.map((tab, i) => (
@@ -83,7 +83,7 @@ export default function Home() {
                 key={tab}
                 onClick={() => setActiveTab(i)}
                 className={
-                  `relative px-2 pb-1 font-bold text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-colors duration-200 ` +
+                  `relative px-2 pb-1 font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl transition-colors duration-200 ` +
                   (activeTab === i
                     ? "text-bone"
                     : "text-bone/70 hover:text-bone/90")
@@ -104,17 +104,17 @@ export default function Home() {
         </nav>
         
         {/* Content area */}
-        <div className="flex justify-center mt-8 mb-32">
+  <div className="flex justify-center mt-8 mb-20">
           <div className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] p-6 sm:p-8 md:p-10">
             <div className="text-bone bg-[var(--background)] border-2 border-bone rounded-lg p-6 sm:p-8 md:p-10">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
                 {tabs[activeTab]}
               </h3>
               {typeof tabContent[activeTab] === 'object' && 'sections' in tabContent[activeTab] ? (
                 <div className="mx-auto max-w-4xl px-8">
                   {(tabContent[activeTab] as { sections: { title: string; content: string; }[] }).sections.map((section, index) => (
                     <div key={index} className="mb-6">
-                      <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3">
                         {section.title}
                       </h4>
                       <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-left whitespace-pre-line">
@@ -122,9 +122,9 @@ export default function Home() {
                       </p>
                     </div>
                   ))}
-                  <div className="flex justify-center mt-8">
+                    <div className="flex justify-center mt-6">
                     <Link href="/player-select">
-                      <button className="bg-black text-white hover:bg-gray-800 rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 py-3 sm:py-4 md:py-5 lg:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition-colors cursor-pointer border-none text-center">
+                      <button className="bg-black text-white hover:bg-gray-800 rounded-full w-40 sm:w-44 md:w-48 lg:w-52 py-2 sm:py-3 md:py-4 text-base sm:text-lg md:text-xl font-semibold transition-colors cursor-pointer border-none text-center">
                         Play Now
                       </button>
                     </Link>

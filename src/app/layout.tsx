@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "./components/header";
+import { Analytics } from "@vercel/analytics/next";
 
 export const myFont = localFont({
   src: [
@@ -70,9 +71,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
-        <main className="pt-29">
+        <main className="pt-20">
           {children}
         </main>
+        <Analytics/>
       </body>
     </html>
   );

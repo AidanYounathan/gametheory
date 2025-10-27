@@ -16,10 +16,10 @@ export default function Header() {
 // Added focus styles and improved accessibility with ARIA attributes
     return (
         <header className="w-full font-[var(--font-neue)] fixed top-0 z-50">
-            <div className="rounded-[5px] m-5 border-5 border-bone shadow-2xl text-bone bg-[var(--background)]">
+            <div className="rounded-[5px] m-3 border border-bone shadow-lg text-bone bg-[var(--background)]">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center p-3">
-                        <h1 className="font-bold text-4xl">
+                        <h1 className="font-bold text-3xl sm:text-4xl">
                             <Link
                                 href="/"
                                 className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[var(--bone)] focus:ring-offset-2"
@@ -31,7 +31,7 @@ export default function Header() {
 
                     {/* Desktop nav - visible on md+ */}
                     <nav
-                        className="hidden md:flex text-[32px] gap-12 items-center p-4 pr-9 font-light"
+                        className="hidden md:flex text-lg md:text-xl gap-8 items-center p-3 pr-6 font-light"
                         role="navigation"
                         aria-label="Main navigation"
                     >
@@ -88,7 +88,7 @@ export default function Header() {
                     className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"}`}
                     style={{ maxHeight: open ? "200px" : "0px" }}
                 >
-                    <nav className="flex flex-col gap-3 p-4 pb-6 text-xl font-light">
+                    <nav className="flex flex-col gap-2 p-3 pb-5 text-base font-light">
                         <Link
                             href="/#about"
                             className="group hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[var(--bone)] focus:ring-offset-2 transition-opacity"
