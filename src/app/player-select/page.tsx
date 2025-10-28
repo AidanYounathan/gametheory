@@ -3,6 +3,7 @@ import Marquee from "react-fast-marquee";
 import { useState } from "react";
 import Image from "next/image";
 
+
 export default function Home() {
     const [selectedCharacter, setSelectedCharacter] = useState<number | null>(null);
 
@@ -20,8 +21,8 @@ export default function Home() {
         { id: 11, name: "Feld", description: "Bold and aggressive tests trust by pushing early.", image: "/placeholder-character.png" },
         { id: 12, name: "Joss", description: "Mostly Tit-for-Tat but occasionally throws a surprise betrayal.", image: "/placeholder-character.png" },
         { id: 13, name: "Tullock", description: "Plays unpredictably with short bursts of aggression.", image: "/placeholder-character.png" },
-        { id: 14, name: "Unnamed", description: "Description 14", image: "/placeholder-character.png" },
-        { id: 15, name: "Random", description: "Description 15", image: "/placeholder-character.png" },
+        { id: 14, name: "Unnamed", description: "Mysterious contender. Its behavior is anyone’s guess.", image: "/placeholder-character.png" },
+        { id: 15, name: "Random", description: "Pure chaos—every round is a coin flip.", image: "/placeholder-character.png" },
     ];
 
     const handleCharacterSelect = (characterId: number) => {
