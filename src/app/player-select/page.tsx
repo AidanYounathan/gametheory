@@ -6,6 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
     const [selectedCharacter, setSelectedCharacter] = useState<number | null>(null);
+    const [rounds, setRounds] = useState<number>(10); // Default to 10 rounds
 
     const characters = [
         { id: 1, name: "Tit for Tat", description: "\"I'll match your move!\"", image: "/placeholder-character.png" },
@@ -75,15 +76,39 @@ export default function Home() {
                 ))}
             </div>
             
+            {/* Round selection slider */}
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
+                <div className="overflow-hidden font-bold text-xl sm:text-2xl md:text-3xl tracking-normal text-background text-outline py-4">
+                    <h3>ROUNDS: {rounds}</h3>
+                    <div className="mt-4">
+                        <input
+                            type="range"
+                            value={rounds}
+                            onChange={(e) => setRounds(Number(e.target.value))}
+                            min={5}
+                            max={20}
+                            step={1}
+                            className="w-full h-2 bg-bone rounded-lg appearance-none cursor-pointer accent-bone hover:accent-background"
+                        />
+                        <div className="flex justify-between  text-base sm:text-lg md:text-xl">
+                            <span>5</span>
+                            <span>20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             {/* Selected character display */}
             {selectedCharacter && (
-                <div className="text-center mt-6 p-4 bg-bone text-gray-800 rounded-lg mx-6 sm:mx-8 md:mx-10 lg:mx-12 mb-3">
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
-                        Selected: {characters.find(c => c.id === selectedCharacter)?.name}
-                    </h2>
-                    <button className="mt-4 bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors">
-                        Continue with this character
-                    </button>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
+                    <div className="overflow-hidden font-bold tracking-normal text-background text-outline py-4 text-center">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl">
+                            {characters.find(c => c.id === selectedCharacter)?.name} - {rounds} ROUNDS
+                        </h2>
+                        <button className="mt-6 bg-bone text-background px-8 py-3 rounded-lg hover:bg-background hover:text-bone border-2 border-bone transition-all duration-200 text-lg sm:text-xl">
+                            START GAME
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

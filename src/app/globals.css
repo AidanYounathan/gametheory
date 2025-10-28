@@ -47,8 +47,15 @@ html {
   -webkit-text-stroke: 1px var(--bone);
 }
 
+.text-outline-smaller {
+  -webkit-text-stroke: .5px var(--bone);
+}
+
 @media (max-width: 768px) {
   .text-outline {
     -webkit-text-stroke: .5px var(--bone);
   }
+  .text-outline-smaller {
+  -webkit-text-stroke: .25px var(--bone);
+}
 }
