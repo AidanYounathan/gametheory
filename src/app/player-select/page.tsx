@@ -84,15 +84,18 @@ export default function Home() {
                         <input
                             type="range"
                             value={rounds}
-                            onChange={(e) => setRounds(Number(e.target.value))}
+                            onChange={(e) => {
+                                setRounds(Number(e.target.value))
+                                console.log(`Selected rounds: ${e.target.value}`);
+                            }}
                             min={5}
-                            max={20}
+                            max={50}
                             step={1}
-                            className="w-full h-2 bg-bone rounded-lg appearance-none cursor-pointer accent-bone hover:accent-background"
+                            className="custom-slider"
                         />
                         <div className="flex justify-between  text-base sm:text-lg md:text-xl">
                             <span>5</span>
-                            <span>20</span>
+                            <span>50</span>
                         </div>
                     </div>
                 </div>
@@ -115,4 +118,3 @@ export default function Home() {
     );
 }
 
-//Need to work on the logic,

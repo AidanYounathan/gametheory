@@ -56,6 +56,48 @@ html {
     -webkit-text-stroke: .5px var(--bone);
   }
   .text-outline-smaller {
-  -webkit-text-stroke: .25px var(--bone);
+    -webkit-text-stroke: .25px var(--bone);
+  }
 }
+
+/* Custom Slider Styles */
+.custom-slider {
+  width: 100%;
+  height: 8px;
+  background: var(--bone);
+  border-radius: 0.5rem;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--bone);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Firefox */
+.custom-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--bone);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
 }
