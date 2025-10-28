@@ -2,11 +2,13 @@
 import Marquee from "react-fast-marquee";
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
     const [selectedCharacter, setSelectedCharacter] = useState<number | null>(null);
     const [rounds, setRounds] = useState<number>(10); // Default to 10 rounds
+    const router = useRouter();
 
     const characters = [
         { id: 1, name: "Tit for Tat", description: "\"I'll match your move!\"", image: "/placeholder-character.png" },
@@ -30,8 +32,14 @@ export default function Home() {
         const character = characters.find(c => c.id === characterId);
         if (character) {
             console.log(`Selected character: ${character.name}`);
-            console.log(`Selected character ID: ${characterId}`);
             setSelectedCharacter(characterId);
+        }
+    };
+
+    const handleGameStart = () => {
+        if (selectedCharacter && rounds) {
+            console.log(`Starting game with character: ${characters[selectedCharacter-1].name} and rounds: ${rounds}`);
+            router.push('/pd-play');
         }
     };
 
@@ -50,7 +58,6 @@ export default function Home() {
                                 : 'border-gray-400 hover:border-gray-600 hover:shadow-md'
                         }`}
                     >
-
                         <div className="w-full flex-1 flex items-center justify-center mb-2">
                             <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-300 rounded-full flex items-center justify-center">
                                 <span className="text-gray-500 text-xs">IMG</span>
@@ -108,7 +115,7 @@ export default function Home() {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl">
                             {characters.find(c => c.id === selectedCharacter)?.name} - {rounds} ROUNDS
                         </h2>
-                        <button className="mt-6 bg-bone text-background px-8 py-3 rounded-lg hover:bg-background hover:text-bone border-2 border-bone transition-all duration-200 text-lg sm:text-xl">
+                        <button onClick={() => handleGameStart()} className="mt-6 bg-bone text-background px-8 py-3 rounded-lg hover:bg-background hover:text-bone border-2 border-bone transition-all duration-200 text-lg sm:text-xl">
                             START GAME
                         </button>
                     </div>
