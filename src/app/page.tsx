@@ -92,10 +92,10 @@ export default function Home() {
       </section>
       {/* Game rule selection tab */}
       <section id="playNow" ref={sectionRef}>
-        <div className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
+        <div className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-32'}`}>
           <h1>🎮 Choose Your Game 🎮</h1>
         </div>
-        <nav className={`w-full flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+        <nav className={`w-full flex justify-center mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14 transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-32'}`}>
           <div className="flex flex-row items-end gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 relative">
             {/* Base underline for all */}
             <div className="absolute left-0 right-0 bottom-0 h-[2px] bg-bone w-full pointer-events-none" style={{zIndex: 0}} />
@@ -125,7 +125,7 @@ export default function Home() {
         </nav>
         
         {/* Content area */}
-  <div className={`flex justify-center mt-8 mb-20 transition-all duration-700 delay-[400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+  <div className={`flex justify-center mt-8 mb-20 transition-all duration-1000 ease-out delay-[600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-32'}`}>
           <div className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] p-6 sm:p-8 md:p-10">
             <div className="text-bone bg-[var(--background)] border-2 border-bone rounded-lg p-6 sm:p-8 md:p-10">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
