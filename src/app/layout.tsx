@@ -28,7 +28,7 @@ export const myFont = localFont({
       style: 'normal',
     }
   ],
-  variable: "--font-neue",        
+  variable: "--font-neue",
   display: "swap",
 
 });
@@ -74,7 +74,7 @@ export default function RootLayout({
         <main className="pt-20">
           {children}
         </main>
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );
