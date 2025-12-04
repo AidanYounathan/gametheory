@@ -46,20 +46,20 @@ export default function Home() {
     return (
         <div className=" text-bone">
             <Marquee className="overflow-hidden font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-normal text-background text-outline">SELECT YOUR OPPONENT! SELECT YOUR OPPONENT!&nbsp;</Marquee>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 md:py-3 max-w-7xl mx-auto">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 md:gap-4 p-4 sm:p-6 md:p-8 md:py-3 max-w-7xl lg:max-w-5xl mx-auto">
                 {/* Character options - 5x3 responsive grid */}
                 {characters.map((character) => (
                     <div 
                         key={character.id}
                         onClick={() => handleCharacterSelect(character.id)}
-                        className={`bg-gray-200 border p-2 sm:p-3 rounded-lg h-32 sm:h-36 md:h-40 flex flex-col justify-between items-center text-center cursor-pointer transition-all duration-200 ${
+                        className={`bg-gray-200 border p-2 sm:p-3 rounded-lg h-32 sm:h-36 md:h-40 lg:h-28 flex flex-col justify-between items-center text-center cursor-pointer transition-all duration-200 ${
                             selectedCharacter === character.id 
                                 ? 'border-blue-500 bg-blue-100 shadow-lg transform scale-105' 
                                 : 'border-gray-400 hover:border-gray-600 hover:shadow-md'
                         }`}
                     >
                         <div className="w-full flex-1 flex items-center justify-center mb-2">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-300 rounded-full flex items-center justify-center">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-10 lg:h-10 bg-gray-300 rounded-full flex items-center justify-center">
                                 <span className="text-gray-500 text-xs">IMG</span>
                                 {/* <Image 
                                     src={character.image} 
@@ -72,10 +72,10 @@ export default function Home() {
                         </div>
                         
                         <div className="w-full">
-                            <h3 className="text-xs sm:text-sm font-bold text-gray-800 mb-0.5">
+                            <h3 className="text-xs sm:text-sm lg:text-xs font-bold text-gray-800 mb-0.5">
                                 {character.name}
                             </h3>
-                            <p className="text-[10px] sm:text-xs text-gray-600 leading-tight">
+                            <p className="text-[10px] sm:text-xs lg:text-[9px] text-gray-600 leading-tight">
                                 {character.description}
                             </p>
                         </div>
@@ -84,10 +84,10 @@ export default function Home() {
             </div>
             
             {/* Round selection slider */}
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 md:px-8">
-                <div className="overflow-hidden font-bold text-xl sm:text-2xl md:text-3xl tracking-normal text-background text-outline py-4">
+            <div className="max-w-3xl lg:max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
+                <div className="overflow-hidden font-bold text-xl sm:text-2xl md:text-3xl lg:text-2xl tracking-normal text-background text-outline py-4 lg:py-3">
                     <h3>ROUNDS: {rounds}</h3>
-                    <div className="mt-4">
+                    <div className="mt-4 lg:mt-3">
                         <input
                             type="range"
                             value={rounds}
@@ -100,7 +100,7 @@ export default function Home() {
                             step={1}
                             className="custom-slider"
                         />
-                        <div className="flex justify-between  text-base sm:text-lg md:text-xl">
+                        <div className="flex justify-between  text-base sm:text-lg md:text-xl lg:text-base">
                             <span>5</span>
                             <span>50</span>
                         </div>
@@ -110,12 +110,12 @@ export default function Home() {
             
             {/* Selected character display */}
             {selectedCharacter && (
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
-                    <div className="overflow-hidden font-bold tracking-normal text-background text-outline py-4 text-center">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl">
+                <div className="max-w-7xl lg:max-w-5xl mx-auto px-4 sm:pb-6 md:px-8 ">
+                    <div className="overflow-hidden font-bold tracking-normal text-background text-outline  text-center">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl">
                             {characters.find(c => c.id === selectedCharacter)?.name} - {rounds} ROUNDS
                         </h2>
-                        <button onClick={() => handleGameStart()} className="mt-6 bg-bone text-background px-8 py-3 rounded-lg hover:bg-background hover:text-bone border-2 border-bone transition-all duration-200 text-lg sm:text-xl">
+                        <button onClick={() => handleGameStart()} className="mt-6 lg:mt-4 bg-bone text-background px-8 lg:px-6 py-3 lg:py-2 rounded-lg hover:bg-background hover:text-bone border-2 border-bone transition-all duration-200 text-lg sm:text-xl lg:text-base">
                             START GAME
                         </button>
                     </div>
