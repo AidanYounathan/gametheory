@@ -28,7 +28,7 @@ export const myFont = localFont({
       style: 'normal',
     }
   ],
-  variable: "--font-neue",        
+  variable: "--font-neue",
   display: "swap",
 
 });
@@ -78,7 +78,7 @@ export default function RootLayout({
             <p><a className="hover:underline" href="https://github.com/aidanyounathan">My GitHub</a></p>
           </div>
         </main>
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

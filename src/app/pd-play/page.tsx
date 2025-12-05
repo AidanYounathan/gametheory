@@ -1,12 +1,29 @@
+'use client'
+import { useState } from "react";
 
 
 export default function Home() {
-    
+    const [playerScore, setPlayerScore] = useState<number>(0);
+    const [opponentScore, setOpponentScore] = useState<number>(0);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen text-bone">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8">COMING SOON</h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center max-w-xl">The Prisoner's Dilemma game is currently under development. Stay tuned for an exciting interactive experience where you can test your strategies against classic opponents!</p>
-        </div>
+        <main>
+            <div className="page-title text-bone">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-bold text-center mb-8 px-4 sm:px-6 md:px-8">
+                    Prisoner's Dilemma 
+                </h1>
+            </div>
+            <div className="game-container">
+                <div className="scores">
+                    <div className="">
+
+                    </div>
+                    <div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
     );
 }
