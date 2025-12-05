@@ -104,7 +104,7 @@ export default function Home() {
         </nav>
         
         {/* Content area */}
-  <div className="flex justify-center mt-8 mb-20">
+  <div className="flex justify-center mt-8">
           <div className="w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] p-6 sm:p-8 md:p-10">
             <div className="text-bone bg-[var(--background)] border-2 border-bone rounded-lg p-6 sm:p-8 md:p-10">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">

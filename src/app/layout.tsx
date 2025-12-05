@@ -73,6 +73,10 @@ export default function RootLayout({
         <Header />
         <main className="pt-20">
           {children}
+          <div className="flex flex-col items-center text-white justify-center my-8" >
+            <p className="hover:cursor-default text-md font-bold">An Aidan Younathan Production</p>
+            <p><a className="hover:underline" href="https://github.com/aidanyounathan">My GitHub</a></p>
+          </div>
         </main>
         <Analytics/>
       </body>
