@@ -39,7 +39,8 @@ export default function Home() {
     const handleGameStart = () => {
         if (selectedCharacter && rounds) {
             console.log(`Starting game with character: ${characters[selectedCharacter-1].name} and rounds: ${rounds}`);
-            router.push('/pd-play');
+            // Pass character ID and rounds via URL params
+            router.push(`/pd-play?character=${selectedCharacter}&rounds=${rounds}`);
         }
     };
 
