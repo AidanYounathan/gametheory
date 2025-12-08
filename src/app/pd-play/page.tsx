@@ -65,19 +65,25 @@ export default function Home() {
                 </h1>
             </div>
             <div className="game-container">
-                <div className="scores flex items-center flex-row font-rubik text-3xl justify-center gap-8 mb-8 text-bone">
+                <div className="scores flex items-center flex-row font-rubik text-2xl justify-center gap-8 mb-8 text-bone">
                     <div className="">
-                        <h2>Player Score: {playerScore}</h2>
+                        <h2>Player: {playerScore}</h2>
                     </div>
                     <div>
-                        <h2>{opponentName} Score: {opponentScore}</h2>
+                        <h2>{opponentName}: {opponentScore}</h2>
                     </div>
                 </div>
+                
+
+
+
+
+
                 <div>
                     {/* Game implementation goes here */}
                     <p className="text-bone text-center">Rounds: {currentRound}/{rounds}</p>
                 </div>
-                <div>
+                <div className=" flex justify-center">
                     <button onClick={handleNextRound} className="bg-blue-500 text-white px-4 py-2 rounded">
                         Next Round
                     </button>
